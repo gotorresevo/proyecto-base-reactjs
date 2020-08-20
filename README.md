@@ -1,15 +1,15 @@
 ## Configuracion del ambiente de trabajo
 
-### Instalar eslint para el proyecto
+### Instalar plugin eslint de react para el proyecto
 
-`npm install eslint --save-dev`
+`npm install eslint-plugin-react --save-dev`
 
 ### Inicialice eslint para el proyecto.
 El siguiente comando le permitira crear un .eslintrc.{js,yml,json} siguiendo un paso a paso
 
-`npx eslint --init`
+`npm run eslint:init`
 
-al final el archivo debera quedar de la siguiente forma
+al final el archivo debera quedar de la siguiente forma (https://github.com/yannickcr/eslint-plugin-react)
 
 ```json
 {
@@ -35,27 +35,46 @@ al final el archivo debera quedar de la siguiente forma
     "rules": {},
     "settings": {
         "react": {
+            "createClass": "createReactClass",
             "pragma": "React",
-            "version": "^16.13.1"
+            "version": "detect",
+            "flowVersion": "0.53",
+            "propWrapperFunctions": [
+                "forbidExtraProps",
+                {
+                    "property": "freeze",
+                    "object": "Object"
+                },
+                {
+                    "property": "myFavoriteWrapper"
+                }
+            ],
+            "linkComponents": [
+                "Hyperlink",
+                {
+                    "name": "Link",
+                    "linkAttribute": "to"
+                }
+            ]
         }
     },
     "overrides": [
         {
-          "files": [
-            "**/*.test.js",
-            "**/*.spec.jsx"
-          ],
-          "env": {
-            "jest": true
-          }
+            "files": [
+                "**/*.test.js",
+                "**/*.spec.jsx"
+            ],
+            "env": {
+                "jest": true
+            }
         }
-      ]
+    ]
 }
 ```
 
 ### Analice todo el codigo que esta dentro
 
-`npx eslint src`
+`npm run eslint:valid`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
