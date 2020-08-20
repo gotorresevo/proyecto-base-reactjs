@@ -11,7 +11,8 @@ El siguiente comando le permitira crear un .eslintrc.{js,yml,json} siguiendo un 
 
 al final el archivo debera quedar de la siguiente forma
 
-`{
+```json
+{
     "env": {
         "node": true,
         "browser": true,
@@ -49,7 +50,8 @@ al final el archivo debera quedar de la siguiente forma
           }
         }
       ]
-}`
+}
+```
 
 ### Analice todo el codigo que esta dentro
 
