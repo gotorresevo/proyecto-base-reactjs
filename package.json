@@ -34,6 +34,10 @@
     ]
   },
   "jest": {
+    "coveragePathIgnorePatterns" : [
+      "src/serviceWorker.js",
+      "src/index.js"
+    ],
     "coverageReporters": [
       "text",
       "text-summary"
