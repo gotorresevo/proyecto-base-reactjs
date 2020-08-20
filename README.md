@@ -1,3 +1,60 @@
+## Configuracion del ambiente de trabajo
+
+### Instalar eslint para el proyecto
+
+`npm install eslint --save-dev`
+
+### Inicialice eslint para el proyecto.
+El siguiente comando le permitira crear un .eslintrc.{js,yml,json} siguiendo un paso a paso
+
+`npx eslint --init`
+
+al final el archivo debera quedar de la siguiente forma
+
+`{
+    "env": {
+        "node": true,
+        "browser": true,
+        "es2020": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {},
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "^16.13.1"
+        }
+    },
+    "overrides": [
+        {
+          "files": [
+            "**/*.test.js",
+            "**/*.spec.jsx"
+          ],
+          "env": {
+            "jest": true
+          }
+        }
+      ]
+}`
+
+### Analice todo el codigo que esta dentro
+
+`npx eslint src`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
